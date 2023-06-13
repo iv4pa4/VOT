@@ -1,17 +1,10 @@
 <?php
-$db_host = '127.0.0.1';
-$db_user = 'root';
-$db_password = 'root';
-$db_db = 'quiz';
-$db_port = 8889;
 
-global $conn;
-$conn = new mysqli(
-    $db_host,
-    $db_user,
-    $db_password,
-    $db_db,
-    $db_port
+$conn = mysqli_connect(
+    'db', # service name
+    'php_docker', # username
+    'password', # password
+    'php_docker' # db table
 );
 
 if ($conn->connect_error) {
