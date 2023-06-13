@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/fb1f094f-b85e-480e-8b1a-c18752584fa8/resourceGroups/feedbackapp/providers/Microsoft.Web/sites/FeedbackAppVot",
+    "appService.deploySubpath": "."
+}
