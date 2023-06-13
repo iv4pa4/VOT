@@ -1,16 +1,15 @@
 version: '3'
 services:
   www:
-      build:
-        context: .
-        dockerfile: Dockerfile
-      volumes:
-        - "./:/var/www/html"
-      ports:
-        - 80:80
-        - 443:443
-
-  db: 
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - "./:/var/www/html"
+    ports:
+      - 80:80
+      - 443:443
+  db:
     image: mysql:latest
     environment:
       - MYSQL_DATABASE=php_docker
@@ -19,8 +18,6 @@ services:
       - MYSQL_ALLOW_EMPTY_PASSWORD=1
     volumes:
       - "./db:/docker-entrypoint-initdb.d"
-      - "mysql-data:/var/lib/mysql"  # Add this line to persist MySQL data
-
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
@@ -28,6 +25,3 @@ services:
     environment:
       - PMA_HOST=db
       - PMA_PORT=3306
-
-volumes:
-  mysql-data:  # Define a named volume for MySQL data
